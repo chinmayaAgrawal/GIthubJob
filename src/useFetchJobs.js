@@ -11,8 +11,8 @@ const ACTIONS = {
     ERROR: 'error',
 }
 
-const BASE_URL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json'
-
+const BASE_URL = ' https://corsanywhere.herokuapp.com/https://jobs.github.com/positions.json'
+//https://api.allorigins.win/raw?url=/
 function reducer(state, action) {
     switch (action.type) {
       case ACTIONS.MAKE_REQUEST:
@@ -33,7 +33,7 @@ export default function useFetchJobs(params, page) {
     const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true })
     //payload is date for the given type
     // dispatch({ type:int,payload:{x:3}});
-
+   
     //whenever there is a change in either params or page we need to reload and so
     // useEffect is the react hook fot it
     
@@ -42,7 +42,8 @@ export default function useFetchJobs(params, page) {
         dispatch({ type: ACTIONS.MAKE_REQUEST })
         axios.get(BASE_URL, {
             //covert the given data to markdown as specified in documentation
-            params: { markdown: true, page: page, ...params }
+            params: { markdown: true, page: page, ...params },
+            
     }).then(res => {
             //action for the received JSON res.data
             dispatch({ type: ACTIONS.GET_DATA, payload: { jobs: res.data } }) 

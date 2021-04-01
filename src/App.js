@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
+//import './App.css';
 
-import {Container} from 'react-bootstrap';
 import useFetchJobs from './useFetchJobs';
-
+import { Container } from 'react-bootstrap';
 function App() {
     
   //while fetching for jobs the app too will be loading and in case there
@@ -17,6 +16,7 @@ function App() {
       {loading && <h1>LOADING ......</h1>}
       { error && <h1> ERROR OCCURED.... TRY AGAIN  :)</h1>}
       <h1>{jobs.length}</h1>
+
     </Container>
     /*
     <div className="App">
