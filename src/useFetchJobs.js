@@ -12,7 +12,7 @@ const ACTIONS = {
 }
 
 const BASE_URL = ' https://corsanywhere.herokuapp.com/https://jobs.github.com/positions.json'
-//https://api.allorigins.win/raw?url=/
+//no longer supported /// https://api.allorigins.win/raw?url=/
 function reducer(state, action) {
     switch (action.type) {
       case ACTIONS.MAKE_REQUEST:
